@@ -1,3 +1,6 @@
 [submodule "pack/go/start/vim-go"]
 	path = pack/go/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "pack/common/start/YouCompleteMe"]
+	path = pack/common/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

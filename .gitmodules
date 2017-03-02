@@ -1,0 +1,3 @@
+[submodule "pack/go/start/vim-go"]
+	path = pack/go/start/vim-go
+	url = https://github.com/fatih/vim-go.git

@@ -4,3 +4,6 @@
 [submodule "pack/common/start/YouCompleteMe"]
 	path = pack/common/start/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "pack/common/start/nerdtree"]
+	path = pack/common/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

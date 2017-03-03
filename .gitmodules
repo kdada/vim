@@ -7,3 +7,6 @@
 [submodule "pack/common/start/nerdtree"]
 	path = pack/common/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "pack/common/start/gruvbox"]
+	path = pack/common/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git

@@ -10,6 +10,9 @@ set shiftwidth=4
 set cursorline
 set background=dark
 set clipboard+=unnamed
+set backupdir=~/.vim_files/backup//
+set directory=~/.vim_files/swap//
+set undodir=~/.vim_files/undo//
 let mapleader = ";"
 let g:gruvbox_contrast_dark = "hard"
 let NERDTreeShowHidden=1

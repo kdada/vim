@@ -18,6 +18,11 @@ $ ./install.py --gocode-completer
 gocode set unimported-packages true
 ```
 
+(3) Create vim backup, swap, undo directory
+```
+mkdir -p ~/.vim_files/{backup,swap,undo}
+```
+
 ### Install zsh
 ```
 brew install zsh

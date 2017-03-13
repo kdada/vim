@@ -16,14 +16,6 @@ let NERDTreeShowHidden=1
 highlight Pmenu ctermfg=15 ctermbg=7
 highlight PmenuSel ctermfg=0 ctermbg=7
 
-" input
-inoremap ` ``<ESC>i
-inoremap ( ()<ESC>i
-inoremap { {<CR>.<CR>}<ESC>k$xa
-inoremap [ []<ESC>i
-inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
-
 " keys
 nmap <TAB> <C-W><C-W>
 nmap gb <C-O>

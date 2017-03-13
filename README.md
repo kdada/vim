@@ -42,12 +42,16 @@ bind C-n send-prefix
 set-window-option -g mode-keys vi
 bind C-n copy-mode
 bind C-p paste-buffer
-bind | split-window -h
-bind - split-window -v
+bind \ split-window -h -c '#{pane_current_path}'
+bind - split-window -v -c '#{pane_current_path}'
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+bind H resize-pane -L 10
+bind J resize-pane -D 10
+bind K resize-pane -U 10
+bind L resize-pane -R 10
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
 set -g mouse on

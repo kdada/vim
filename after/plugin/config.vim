@@ -26,7 +26,8 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
-nmap gb <C-O>
+nnoremap gb <C-O>
+nnoremap gn <C-I>
 nmap <C-B> :NERDTreeToggle<CR>
 
 " auto cmds

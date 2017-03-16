@@ -22,6 +22,10 @@ highlight PmenuSel ctermfg=0 ctermbg=7
 
 " keys
 nmap <TAB> <C-W><C-W>
+nmap <C-H> <C-W>h
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
 nmap gb <C-O>
 nmap <C-B> :NERDTreeToggle<CR>
 

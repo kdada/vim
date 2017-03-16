@@ -1,5 +1,6 @@
 " options
 set nocompatible
+set lazyredraw
 set shortmess+=c
 set hlsearch
 set incsearch
@@ -43,4 +44,31 @@ let g:go_highlight_operators = 0
 let g:go_highlight_build_constraints = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+
+" swap
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
+nmap <silent> <leader>h :call MarkWindowSwap()<CR><C-W>h:call DoWindowSwap()<CR>
+nmap <silent> <leader>j :call MarkWindowSwap()<CR><C-W>j:call DoWindowSwap()<CR>
+nmap <silent> <leader>k :call MarkWindowSwap()<CR><C-W>k:call DoWindowSwap()<CR>
+nmap <silent> <leader>l :call MarkWindowSwap()<CR><C-W>l:call DoWindowSwap()<CR>
+nmap <silent> <leader>m :call MarkWindowSwap()<CR>
+nmap <silent> <leader>s :call DoWindowSwap()<CR>
 

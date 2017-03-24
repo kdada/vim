@@ -9,6 +9,7 @@ set nu
 set tabstop=4
 set shiftwidth=4
 set cursorline
+set t_Co=256
 set background=dark
 set clipboard+=unnamed
 set backupdir=~/.vim_files/backup//

@@ -1,3 +1,7 @@
+"""""""""""""""""""""""""""""""""""""""
+" Common Config
+"""""""""""""""""""""""""""""""""""""""
+
 " options
 set nocompatible
 set lazyredraw
@@ -12,14 +16,16 @@ set cursorline
 set t_Co=256
 set background=dark
 set clipboard+=unnamed
+set updatetime=250
+set backspace=indent,eol,start
 set backupdir=~/.vim_files/backup//
 set directory=~/.vim_files/swap//
 set undodir=~/.vim_files/undo//
 let mapleader = ";"
-let g:gruvbox_contrast_dark = "hard"
-let NERDTreeShowHidden=1
 highlight Pmenu ctermfg=15 ctermbg=7
 highlight PmenuSel ctermfg=0 ctermbg=7
+syntax on
+filetype plugin indent on
 
 " keys
 nmap <TAB> <C-W><C-W>
@@ -29,27 +35,6 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 nnoremap gb <C-O>
 nnoremap gn <C-I>
-nmap <C-B> :NERDTreeToggle<CR>
-
-" auto cmds
-" autocmd VimEnter * NERDTreeToggle
-
-" go keys
-au FileType go nmap ` <Plug>(go-info)
-au FileType go nmap <leader>n <Plug>(go-rename)
-au FileType go nmap <leader>i :GoImplements<CR>
-au FileType go nmap <leader>c :GoCallees<CR>
-au FileType go nmap <leader>r :GoReferrers<CR>
-au FileType go nmap <leader><leader> :w<CR>:GoMetaLinter<CR>:GoVet<CR>
-
-let g:go_highlight_functions = 0
-let g:go_highlight_methods = 0
-let g:go_highlight_fields = 0
-let g:go_highlight_types = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_build_constraints = 0
-let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 1
 
 " swap
 function! MarkWindowSwap()
@@ -77,4 +62,43 @@ nmap <silent> <leader>k :call MarkWindowSwap()<CR><C-W>k:call DoWindowSwap()<CR>
 nmap <silent> <leader>l :call MarkWindowSwap()<CR><C-W>l:call DoWindowSwap()<CR>
 nmap <silent> <leader>m :call MarkWindowSwap()<CR>
 nmap <silent> <leader>s :call DoWindowSwap()<CR>
+
+"""""""""""""""""""""""""""""""""""""""
+" Plugin Config
+"""""""""""""""""""""""""""""""""""""""
+
+" gruvbox
+let g:gruvbox_contrast_dark = "hard"
+
+" nerdtree
+let NERDTreeShowHidden=1
+nmap <C-B> :NERDTreeToggle<CR>
+
+" git
+let g:gitgutter_map_keys = 0
+let g:gitgutter_sign_column_always = 1
+
+" comment
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1 
+nmap <leader>/ <Plug>NERDCommenterToggle
+vmap <leader>/ <Plug>NERDCommenterToggle
+
+" go
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 0
+let g:go_highlight_fields = 0
+let g:go_highlight_types = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_build_constraints = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+au FileType go nmap ` <Plug>(go-info)
+au FileType go nmap <leader>n <Plug>(go-rename)
+au FileType go nmap <leader>i :GoImplements<CR>
+au FileType go nmap <leader>c :GoCallees<CR>
+au FileType go nmap <leader>r :GoReferrers<CR>
+au FileType go nmap <leader><leader> :w<CR>:GoMetaLinter<CR>:GoVet<CR>
 

@@ -19,6 +19,7 @@ set clipboard+=unnamed
 set updatetime=250
 set backspace=indent,eol,start
 set history=1000
+set laststatus=2
 set statusline=%r%f\ %m%=%{fugitive#statusline()}\ %l/%L\ %c/%v\ 
 set backupdir=~/.vim_files/backup//
 set directory=~/.vim_files/swap//

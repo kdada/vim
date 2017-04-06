@@ -18,12 +18,17 @@ set background=dark
 set clipboard+=unnamed
 set updatetime=250
 set backspace=indent,eol,start
+set history=1000
 set backupdir=~/.vim_files/backup//
 set directory=~/.vim_files/swap//
 set undodir=~/.vim_files/undo//
 let mapleader = ";"
 highlight Pmenu ctermfg=15 ctermbg=7
 highlight PmenuSel ctermfg=0 ctermbg=7
+highlight DiffAdd ctermbg=0
+highlight DiffDelete ctermbg=0
+highlight DiffChange ctermbg=25
+highlight DiffText ctermbg=25
 syntax on
 filetype plugin indent on
 

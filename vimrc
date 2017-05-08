@@ -15,7 +15,7 @@ set shiftwidth=4
 set cursorline
 set t_Co=256
 set background=dark
-set clipboard+=unnamed
+set clipboard=unnamedplus
 set updatetime=250
 set backspace=indent,eol,start
 set history=1000
@@ -25,8 +25,8 @@ set backupdir=~/.vim_files/backup//
 set directory=~/.vim_files/swap//
 set undodir=~/.vim_files/undo//
 let mapleader = ";"
-highlight Pmenu ctermfg=15 ctermbg=7
-highlight PmenuSel ctermfg=0 ctermbg=7
+highlight Pmenu ctermfg=0 ctermbg=7
+highlight PmenuSel ctermfg=1 ctermbg=7
 highlight DiffAdd ctermbg=0
 highlight DiffDelete ctermbg=0
 highlight DiffChange ctermbg=25
@@ -108,4 +108,7 @@ au FileType go nmap <leader>i :GoImplements<CR>
 au FileType go nmap <leader>c :GoCallees<CR>
 au FileType go nmap <leader>r :GoReferrers<CR>
 au FileType go nmap <leader><leader> :w<CR>:GoMetaLinter<CR>:GoVet<CR>
+
+" ycm
+let g:ycm_min_num_of_chars_for_completion = 1
 

@@ -24,6 +24,9 @@ set statusline=%r%f\ %m%=%{fugitive#statusline()}\ %l/%L\ %c/%v\
 set backupdir=~/.vim_files/backup//
 set directory=~/.vim_files/swap//
 set undodir=~/.vim_files/undo//
+set undofile
+set undolevels=1000
+set undoreload=10000
 let mapleader = ";"
 highlight Pmenu ctermfg=0 ctermbg=7
 highlight PmenuSel ctermfg=1 ctermbg=7

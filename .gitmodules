@@ -19,3 +19,6 @@
 [submodule "pack/common/start/nerdcommenter"]
 	path = pack/common/start/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "pack/common/start/YCM-Generator"]
+	path = pack/common/start/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git

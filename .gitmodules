@@ -22,3 +22,6 @@
 [submodule "pack/common/start/YCM-Generator"]
 	path = pack/common/start/YCM-Generator
 	url = https://github.com/rdnetto/YCM-Generator.git
+[submodule "pack/common/start/vim-autoformat"]
+	path = pack/common/start/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat.git

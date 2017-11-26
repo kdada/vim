@@ -10,7 +10,7 @@ $ git submodule update --init --recursive
 (1) Build YouCompleteMe
 ```
 $ cd pack/common/start/YouCompleteMe
-$ ./install.py --gocode-completer
+$ ./install.py --go-completer  --clang-completer --js-completer --system-libclang
 ```
 
 (2) Set gocode uses unimported packages
@@ -72,3 +72,54 @@ alias vim='vimx'
 # Start tmux when start zsh
 if [ "$TMUX" = "" ]; then tmux; fi
 ```
+
+### Install javascript and tools
+
+1. Install nodejs(https://nodejs.org)
+```
+sudo tar -xvf node-v{VERSION}-linux-x64.tar.xz -C /usr/local/nodejs
+chmod 777 /usr/local/nodejs -R
+```
+
+2. Add env:
+```
+export NODEJS\_HOME=/usr/local/nodejs
+export PATH=$PATH:$NODEJS\_HOME/bin:$GOPATH/bin
+```
+
+3. Set npm registry:
+```
+alias npm='npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc'
+```
+
+4. Install packages:
+```
+npm -g install eslint
+npm install -D prettier eslint-plugin-prettier eslint-config-prettier
+```
+
+5. Configure ESLint in project:
+```
+eslint --init
+```
+
+Add prettier:
+```
+{
+  "extends': [
+    "eslint:recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}
+```
+
+

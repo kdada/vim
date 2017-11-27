@@ -27,6 +27,7 @@ set undodir=~/.vim_files/undo//
 set undofile
 set undolevels=1000
 set undoreload=10000
+set mmp=10000
 let mapleader = ";"
 highlight Pmenu ctermfg=0 ctermbg=7
 highlight PmenuSel ctermfg=1 ctermbg=7

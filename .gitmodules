@@ -25,6 +25,9 @@
 [submodule "pack/common/start/vim-autoformat"]
 	path = pack/common/start/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat.git
+[submodule "pack/common/start/vim-clang-format"]
+	path = pack/common/start/vim-clang-format
+    url = https://github.com/rhysd/vim-clang-format.git
 [submodule "pack/js/start/vim-jsx"]
 	path = pack/js/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git

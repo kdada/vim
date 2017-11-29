@@ -109,16 +109,70 @@ eslint --init
 Add prettier:
 ```
 {
-  "extends': [
-    "eslint:recommended",
-    "prettier"
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": [
+		"eslint:recommended",
+		"prettier"
+	],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "experimentalObjectRestSpread": true,
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+		"prettier"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            2
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "prettier/prettier": ["error", "fb"]
+    }
+}
+```
+
+6. Configure .tern-project
+```
+{
+  "libs": [
+    "browser",
+    "jquery"
   ],
-  "plugins": [
-    "prettier"
+  "plugins": {
+    "complete_strings": {},
+    "node": {},
+    "modules": {},
+    "es_modules":{},
+    "complete_strings": {},
+    "requirejs": {},
+    "doc_comment": {
+      "fullDocs": true
+    }
+  },
+  "loadEagerly": [
+    "src/**/*.js"
   ],
-  "rules": {
-    "prettier/prettier": "error"
-  }
+  "ecmaVersion": 6
 }
 ```
 

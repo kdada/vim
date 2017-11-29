@@ -136,6 +136,7 @@ let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
 au Filetype html setlocal ts=2 sw=2 expandtab
 au Filetype javascript setlocal ts=2 sw=2 expandtab
+au Filetype javascript nmap <silent> gd :YcmCompleter GoToDefinition<CR>
 
 " ale
 let g:ale_sign_column_always = 1

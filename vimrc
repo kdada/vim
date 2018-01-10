@@ -123,6 +123,7 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_cache_omnifunc = 0
 let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_python_binary_path = 'python3'
 
 " clang format
 let g:clang_format#auto_format = 1
@@ -130,6 +131,7 @@ au FileType c ClangFormatAutoEnable
 
 " c
 au FileType c nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+au FileType python nmap gd :YcmCompleter GoTo<CR>
 
 " js
 let g:jsx_ext_required = 0
@@ -143,4 +145,5 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
+\   'python': ['yapf'],
 \}

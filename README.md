@@ -10,7 +10,7 @@ $ git submodule update --init --recursive
 (1) Build YouCompleteMe
 ```
 $ cd pack/common/start/YouCompleteMe
-$ ./install.py --go-completer  --clang-completer --js-completer --system-libclang
+$ ./install.py --go-completer  --clang-completer --js-completer --system-libclang  --rust-completer
 ```
 
 (2) Set gocode uses unimported packages
@@ -176,4 +176,7 @@ Add prettier:
 }
 ```
 
-
+# Install rls
+```
+rustup component add rls-preview --toolchain nightly
+```

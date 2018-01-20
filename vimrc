@@ -131,6 +131,8 @@ au FileType c ClangFormatAutoEnable
 
 " c
 au FileType c nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" python
 au FileType python nmap gd :YcmCompleter GoTo<CR>
 
 " js
@@ -140,9 +142,17 @@ au Filetype html setlocal ts=2 sw=2 expandtab
 au Filetype javascript setlocal ts=2 sw=2 expandtab
 au Filetype javascript nmap <silent> gd :YcmCompleter GoToDefinition<CR>
 
+" rust
+au FileType rust nmap gd :YcmCompleter GoTo<CR>
+let g:rustfmt_autosave = 1
+
 " ale
 let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   'rust': ['rls'],
+\   'go': ['gometalinter'],
+\}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['yapf'],

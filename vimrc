@@ -128,6 +128,13 @@ let g:ycm_python_binary_path = 'python3'
 " clang format
 let g:clang_format#auto_format = 1
 au FileType c ClangFormatAutoEnable
+let g:clang_format#style_options = {
+\   'BasedOnStyle' : 'llvm',
+\   'IndentWidth' : 4,
+\   'UseTab' : 'Never',
+\   'BreakBeforeBraces' : 'Attach',
+\   'AllowShortIfStatementsOnASingleLine' : 'false'
+\}
 
 " c
 au FileType c nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>

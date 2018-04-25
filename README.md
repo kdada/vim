@@ -2,7 +2,8 @@
 
 ### Update repo
 ```
-$ git submodule update --init --recursive
+$ git submodule update --init --remote
+$ git submodule foreach git submodule update --init --recursive
 ```
 
 ### Build plugins

@@ -27,6 +27,7 @@ set undodir=~/.vim_files/undo//
 set undofile
 set undolevels=1000
 set undoreload=10000
+set signcolumn=yes
 set mmp=10000
 let mapleader = ";"
 highlight Pmenu ctermfg=0 ctermbg=7
@@ -87,7 +88,7 @@ nmap <C-B> :NERDTreeToggle<CR>
 
 " git
 let g:gitgutter_map_keys = 0
-let g:gitgutter_sign_column_always = 1
+"let g:gitgutter_sign_column_always = 1
 
 " comment
 let g:NERDSpaceDelims = 1
@@ -106,6 +107,7 @@ let g:go_highlight_operators = 0
 let g:go_highlight_build_constraints = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+let g:go_info_mode = 'guru'
 au FileType go nmap ` <Plug>(go-info)
 au FileType go nmap <leader>n <Plug>(go-rename)
 au FileType go nmap <leader>i :GoImplements<CR>

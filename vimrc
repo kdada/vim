@@ -29,6 +29,7 @@ set undolevels=1000
 set undoreload=10000
 set signcolumn=yes
 set mmp=10000
+set virtualedit=all
 let mapleader = ";"
 highlight Pmenu ctermfg=0 ctermbg=7
 highlight PmenuSel ctermfg=1 ctermbg=7
@@ -160,7 +161,7 @@ let g:ale_sign_column_always = 1
 let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \   'rust': ['rls'],
-\   'go': ['gometalinter'],
+\   'go': ['golint'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],

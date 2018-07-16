@@ -132,11 +132,25 @@ let g:ycm_python_binary_path = 'python3'
 let g:clang_format#auto_format = 1
 au FileType c ClangFormatAutoEnable
 let g:clang_format#style_options = {
-\   'BasedOnStyle' : 'llvm',
-\   'IndentWidth' : 4,
-\   'UseTab' : 'Never',
-\   'BreakBeforeBraces' : 'Attach',
-\   'AllowShortIfStatementsOnASingleLine' : 'false'
+\	'BasedOnStyle': 'LLVM',
+\	'IndentWidth': 8,
+\	'UseTab': 'Always',
+\	'BreakBeforeBraces': 'Linux',
+\	'AlwaysBreakBeforeMultilineStrings': 'true',
+\	'AllowShortIfStatementsOnASingleLine': 'false',
+\	'AllowShortLoopsOnASingleLine': 'false',
+\	'AllowShortFunctionsOnASingleLine': 'false',
+\	'IndentCaseLabels': 'false',
+\	'AlignEscapedNewlinesLeft': 'false',
+\	'AlignTrailingComments': 'true',
+\	'AllowAllParametersOfDeclarationOnNextLine': 'false',
+\	'AlignAfterOpenBracket': 'true',
+\	'SpaceAfterCStyleCast': 'false',
+\	'MaxEmptyLinesToKeep': 2,
+\	'BreakBeforeBinaryOperators': 'NonAssignment',
+\	'BreakStringLiterals': 'false',
+\	'SortIncludes':    'false',
+\	'ContinuationIndentWidth': 8
 \}
 
 " c

@@ -26,7 +26,7 @@ mkdir -p ~/.vim_files/{backup,swap,undo}
 
 ### Install zsh
 ```
-brew install zsh
+dnf install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ")"
 ```
@@ -34,8 +34,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ### Install tmux
 
 ```
-brew install tmux
-brew install reattach-to-user-namespace
+dnf install tmux
 ```
 
 Create ~/.tmux.conf
@@ -58,8 +57,8 @@ bind H resize-pane -L 10
 bind J resize-pane -D 10
 bind K resize-pane -U 10
 bind L resize-pane -R 10
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy y copy-pipe "tmux save-buffer - | xclip -sel clipboard -i"
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "tmux save-buffer - | xclip -sel clipboard -i"
 set -g mouse on
 ```
 

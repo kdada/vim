@@ -63,3 +63,6 @@
 	url = https://github.com/w0rp/ale.git
 	update = checkout
 	branch = master
+[submodule "pack/go/start/vim-obsession"]
+	path = pack/go/start/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git

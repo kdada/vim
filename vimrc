@@ -116,6 +116,7 @@ au FileType go nmap <leader>i :GoImplements<CR>
 au FileType go nmap <leader>c :GoCallees<CR>
 au FileType go nmap <leader>r :GoReferrers<CR>
 au FileType go nmap <leader><leader> :w<CR>:GoMetaLinter<CR>:GoVet<CR>
+au FileType go nmap gl :YcmCompleter GoTo<CR>
 
 " ycm
 let g:ycm_min_num_of_chars_for_completion = 1

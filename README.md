@@ -40,6 +40,7 @@ dnf install tmux
 Create ~/.tmux.conf
 ```
 set-option -g default-shell /usr/bin/zsh
+set -g history-limit 1000000
 set -g status off
 unbind C-b
 set -g prefix C-n
@@ -60,6 +61,18 @@ bind L resize-pane -R 10
 bind-key -T copy-mode-vi v send-keys -X begin-selection
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "tmux save-buffer - | xclip -sel clipboard -i"
 set -g mouse on
+
+
+# Plugins
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @resurrect-strategy-vim 'session'
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-processes ':all:'
+
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-save-interval '5'
+
+run -b '~/.tmux/plugins/tpm/tpm'
 ```
 
 Start tmux when zsh launched.  

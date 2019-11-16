@@ -110,6 +110,7 @@ let g:go_highlight_build_constraints = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_info_mode = 'guru'
+let g:go_def_mode = 'guru'
 au FileType go nmap ` <Plug>(go-info)
 au FileType go nmap <leader>n <Plug>(go-rename)
 au FileType go nmap <leader>i :GoImplements<CR>

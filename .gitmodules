@@ -66,3 +66,6 @@
 [submodule "pack/go/start/vim-obsession"]
 	path = pack/go/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession.git
+[submodule "pack/rust/start/rust.vim"]
+	path = pack/rust/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git

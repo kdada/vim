@@ -117,7 +117,6 @@ au FileType go nmap <leader>i :GoImplements<CR>
 au FileType go nmap <leader>c :GoCallees<CR>
 au FileType go nmap <leader>r :GoReferrers<CR>
 au FileType go nmap <leader><leader> :w<CR>:GoMetaLinter<CR>:GoVet<CR>
-au FileType go nmap gl :YcmCompleter GoTo<CR>
 
 " ycm
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -129,6 +128,7 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_cache_omnifunc = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_python_binary_path = 'python3'
+nmap gl :YcmCompleter GoTo<CR>
 
 " clang format
 let g:clang_format#auto_format = 1
@@ -183,3 +183,13 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'python': ['yapf'],
 \}
+
+" tools
+function! GrepInCurrentDir(str)
+    let dir = expand('%:p:h') . '/**/*'
+	let ptn = '/' . a:str . '/'
+	execute 'vimgrep' ptn dir
+	execute 'cw'
+endfunction
+
+command! -nargs=1 FD call GrepInCurrentDir('<args>')

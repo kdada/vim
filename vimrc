@@ -12,6 +12,7 @@ set ignorecase
 set nu
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set cursorline
 set t_Co=256
 set background=dark
@@ -169,8 +170,6 @@ au FileType python nmap gd :YcmCompleter GoTo<CR>
 " js
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc = 1
-au Filetype html setlocal ts=2 sw=2 expandtab
-au Filetype javascript setlocal ts=2 sw=2 expandtab
 au Filetype javascript nmap <silent> gd :YcmCompleter GoToDefinition<CR>
 
 " rust
@@ -183,6 +182,8 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = {
 \   'rust': ['rls'],
 \   'go': ['golint'],
+\   'c': ['null'],
+\   'cpp': ['null'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],

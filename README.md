@@ -11,44 +11,39 @@ $ git submodule foreach git submodule update --init --recursive
 (1) Build YouCompleteMe
 ```
 $ cd pack/common/start/YouCompleteMe
-$ ./install.py --go-completer  --clang-completer --js-completer --system-libclang  --rust-completer
+$ ./install.py --go-completer  --clangd-completer
 ```
 
-(2) Set gocode uses unimported packages
+(2) Install vim and create vim backup, swap, undo directory
 ```
-gocode set unimported-packages true
-```
-
-(3) Create vim backup, swap, undo directory
-```
-mkdir -p ~/.vim_files/{backup,swap,undo}
+$ brew install vim
+$ mkdir -p ~/.vim_files/{backup,swap,undo}
 ```
 
-### Install zsh
+### Install oh-my-zsh
 ```
-dnf install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-")"
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### Install tmux
 
 ```
-dnf install tmux
+$ brew install tmux
+$ brew install reattach-to-user-namespace
 ```
 
 Create ~/.tmux.conf
 ```
-set-option -g default-shell /usr/bin/zsh
-set -g history-limit 1000000
 set -g status off
+set-option -g default-command "reattach-to-user-namespace -l zsh"
+set -g history-limit 1000000
 unbind C-b
 set -g prefix C-n
 bind C-n send-prefix
 set-window-option -g mode-keys vi
 bind C-n copy-mode
 bind C-p paste-buffer
-bind \ split-window -h -c '#{pane_current_path}'
+bind '\' split-window -h -c '#{pane_current_path}'
 bind - split-window -v -c '#{pane_current_path}'
 bind h select-pane -L
 bind j select-pane -D
@@ -59,29 +54,13 @@ bind J resize-pane -D 10
 bind K resize-pane -U 10
 bind L resize-pane -R 10
 bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "tmux save-buffer - | xclip -sel clipboard -i"
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 set -g mouse on
-
-
-# Plugins
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @resurrect-strategy-vim 'session'
-set -g @resurrect-capture-pane-contents 'on'
-set -g @resurrect-processes ':all:'
-
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @continuum-save-interval '5'
-
-run -b '~/.tmux/plugins/tpm/tpm'
 ```
 
 Start tmux when zsh launched.  
 Append to the end of ~/.zshrc
 ```
-# need install vimx
-alias vi='vimx'
-alias vim='vimx'
-
 # Start tmux when start zsh
 if [ "$TMUX" = "" ]; then tmux; fi
 ```

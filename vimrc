@@ -15,7 +15,7 @@ set shiftwidth=4
 set cursorline
 set t_Co=256
 set background=dark
-set clipboard=unnamedplus
+set clipboard=unnamed
 set updatetime=250
 set backspace=indent,eol,start
 set history=1000
@@ -90,7 +90,11 @@ nmap <C-B> :NERDTreeToggle<CR>
 
 " git
 let g:gitgutter_map_keys = 0
-"let g:gitgutter_sign_column_always = 1
+highlight! link SignColumn LineNr
+highlight SignColumn ctermbg=black
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
 
 " comment
 let g:NERDSpaceDelims = 1

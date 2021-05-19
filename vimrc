@@ -31,7 +31,7 @@ set undoreload=10000
 set signcolumn=yes
 set mmp=10000
 set virtualedit=all
-set encoding=utf-8
+set fileencodings=utf-8,gb18030,gbk,gb2312,big5
 let mapleader = ";"
 highlight Pmenu ctermfg=0 ctermbg=7
 highlight PmenuSel ctermfg=1 ctermbg=7
